@@ -27,10 +27,15 @@ def find_mismatch(text):
 
 
 def main():
+    inputType = input()
     text = input()
-    mismatch = find_mismatch(text)
-    # Printing answer, write your code here
-    print(text)
+    if inputType and inputType[0] == "F":
+        mismatch = find_mismatch(open("test/" + text, "r").read())
+    elif inputType and inputType[0] == "I":
+        mismatch = find_mismatch(text)
+    else:
+        return
+    print(mismatch)
 
 
 if __name__ == "__main__":
